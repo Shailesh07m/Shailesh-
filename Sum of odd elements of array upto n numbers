@@ -1,22 +1,38 @@
 #include<stdio.h>
 #include<conio.h>
-int main(){
-int a[20], n,i,odd;
-clrscr();
-printf("Enter How Many NO.(Max upto 20):");
-scanf("%d",&n);
-for(i=0;i<n;i++){
-printf("Enter %d th Element of An Array :",i+1);
-scanf("%d",&a[i]);
-}
-odd=0;
-for(i=0;i<n;i++){
-if(a[i]%2==1){
-odd=odd+a[i];
-}
-}
-printf("The Sum Of All Odd element of an array = %d",odd);
-getch();
-return 0;
-}
 
+int main() {
+    // Declare variables
+    int a[20], n, i, odd;
+
+    // Clear the screen (only works in Turbo C or old compilers)
+    clrscr();
+
+    // Ask the user for the number of elements in the array (max 20)
+    printf("Enter How Many Numbers (Max up to 20): ");
+    scanf("%d", &n);
+
+    // Loop to input array elements
+    for (i = 0; i < n; i++) {
+        printf("Enter %d th Element of the Array: ", i + 1);
+        scanf("%d", &a[i]);
+    }
+
+    // Initialize variable to store the sum of odd numbers
+    odd = 0;
+
+    // Loop to calculate the sum of odd elements in the array
+    for (i = 0; i < n; i++) {
+        if (a[i] % 2 == 1) { // Check if the element is odd
+            odd = odd + a[i]; // Add the odd element to the sum
+        }
+    }
+
+    // Display the result
+    printf("The Sum of All Odd Elements of the Array = %d", odd);
+
+    // Wait for user input before closing the program (specific to Turbo C)
+    getch();
+
+    return 0;
+}
